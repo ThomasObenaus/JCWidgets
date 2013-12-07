@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="libs/forms-1.2.1.jar:/opt/eclipse/plugins/org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar:../Task/bin:libs/gtkswing.jar:/opt/eclipse/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar" destdir="api" doctitle="WidgetsLibrary - API" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="thobe.widgets.mergedCellsTable,thobe.widgets.task,thobe.widgets.floatingPanel,thobe.widgets.messagePanel,thobe.widgets.buttons,thobe.widgets.comboBoxButton,thobe.widgets.layout,thobe.widgets.inputSlider,thobe.widgets.textfield,thobe.widgets,thobe.widgets.segmenteditor,thobe.widgets.decoratorPanel,thobe.widgets.splitPanel,thobe.widgets.utils,thobe.widgets.multiFramePanel,thobe.widgets.log,thobe.widgets.multiFramePanel.layouts,thobe.widgets.action,thobe.widgets.filter,thobe.widgets.multiFramePanel.actions,thobe.widgets.scalarbar,thobe.widgets.borders,thobe.widgets.editor,thobe.widgets.icons,thobe.widgets.statusbar" source="1.7" sourcepath="src" splitindex="true" use="true" version="true"/>
+    </target>
+</project>

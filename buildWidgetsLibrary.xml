@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+
+<project name="widgets" basedir="." default="jar">
+
+	<target name="init">
+	    <!-- Setzen von Eigenschaften -->
+	    
+	    <!-- Bitte an das jeweilige Eclipse-Projekt anpassen -->
+	    <property name="WidgL.eclipse.build.dir"	value="bin"/>
+		<property name="WidgL.eclipse.src.dir"		value="src"/>
+			
+		<property name="WidgL.Program-Version"  value="1.4.0.0"/>
+	    
+	    <!-- Diese Eigenschaften sollten unverändert bleiben -->
+	    <property name="WidgL.jar.dir"			value="jar"/>
+		<property name="WidgL.apiDocZip" value="${ant.project.name}_doc.zip"/>
+		<property name="WidgL.sourceZip" value="${ant.project.name}_src.zip"/>
+		<property name="WidgL.sourceTemp" value="_src_tmp"/>
+		<property name="WidgL.jarName" value="${ant.project.name}.jar"/>
+	</target>
+	
+	<!-- API-Doc generieren und in widgets_doc.zip packen -->
+	<target name="createDoc" depends="init">
+  		<echo message="Create and zip API-Doc"/>
+  		<ant antfile="javadoc.xml" dir=""/>
+  		<zip destfile="${WidgL.apiDocZip}" basedir="api" />
+  	</target>
+	
+	<!-- Quellcode in widgets_src.zip packen -->
+	<target name="createSrc" depends="createDoc">
+  		<echo message="Copy source-files and zip them"/>
+		<mkdir dir="${WidgL.sourceTemp}"/>
+		<!-- Dateien aus Eclipse src Verzeichnis kopieren -->
+        <copy toDir="${WidgL.sourceTemp}/">
+    		<fileset dir="${WidgL.eclipse.src.dir}">
+    			<include name="**/*.java"/>
+        		<include name="**/*.properties"/>
+    			<exclude name="playground/**"/>
+    			<exclude name="testing/**"/>
+    		</fileset>
+    	</copy>
+  		<zip destfile="${WidgL.sourceZip}" basedir="${WidgL.sourceTemp}" />
+		<delete dir="${WidgL.sourceTemp}"/>
+  	</target>
+	
+	<!-- 1. Schritt, Ordner "jar" löschen --> 
+    <target name="clean" depends="init">
+    	<echo message="Deleting folder /${WidgL.jar.dir}."/>
+        <delete dir="${WidgL.jar.dir}"/>
+    </target>
+	
+	<!-- 3. Schritt jar erzeugen und Ordner jar löschen --> 
+    <target name="jar" depends="clean,createSrc">
+   		<echo message="Copy files from build-directory /${WidgL.eclipse.build.dir} to /${WidgL.jar.dir}."/>     
+        <!-- Dateien aus Eclipse build Verzeichnis kopieren -->
+        <copy toDir="${WidgL.jar.dir}/">
+    		<fileset dir="${WidgL.eclipse.build.dir}">
+    			<include name="**/*.class"/>
+        		<include name="**/*.properties"/>
+    			<include name="**/*.gif"/>
+    			<include name="**/*.png"/>        		
+        		<exclude name="**/*.jar"/>    		
+    			<exclude name="playground/**"/>
+    			<exclude name="testing/**"/>
+    		</fileset>
+    	</copy>
+    	
+        <!-- JAR-Datei erzeugen -->
+    	<echo message="Create jar-file /${WidgL.jar.dir}/${WidgL.jarName}."/>
+    	<echo message="Program-Version: ${WidgL.Program-Version}"/>
+        <jar destfile="${WidgL.jar.dir}/${WidgL.jarName}" basedir="${WidgL.jar.dir}">        
+        	<!-- Einstiegspunkt in MANIFEST der JAR-Datei schreiben -->
+            <manifest>
+            	<attribute name="Program-Version" value="${WidgL.Program-Version}"/>
+            </manifest>
+        </jar>
+        
+        <!-- JAR-Datei ins Projektverzeichnis kopieren -->
+    	<echo message="copy ${WidgL.jar.dir}/${WidgL.jarName} into project-directory"/>
+    	<copy file="${WidgL.jar.dir}/${WidgL.jarName}" todir="."/>
+
+        <!-- Temporäres JAR-Verzeichnis löschen -->
+    	<antcall target="clean"></antcall>    	
+    </target>
+</project>

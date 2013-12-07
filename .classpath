@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/forms-1.2.1.jar" sourcepath="libs/forms_src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/JCWidgets/libs/forms_docs.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/task.jar" sourcepath="libs/task_src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/JCWidgets/libs/task_doc.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
