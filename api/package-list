@@ -11,13 +11,11 @@ thobe.widgets.icons
 thobe.widgets.inputSlider
 thobe.widgets.layout
 thobe.widgets.log
-thobe.widgets.mergedCellsTable
 thobe.widgets.messagePanel
 thobe.widgets.multiFramePanel
 thobe.widgets.multiFramePanel.actions
 thobe.widgets.multiFramePanel.layouts
 thobe.widgets.scalarbar
-thobe.widgets.segmenteditor
 thobe.widgets.splitPanel
 thobe.widgets.statusbar
 thobe.widgets.task
