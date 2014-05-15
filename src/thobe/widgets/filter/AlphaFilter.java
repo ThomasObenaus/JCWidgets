@@ -20,7 +20,7 @@ import java.awt.image.RGBImageFilter;
  */
 public class AlphaFilter extends RGBImageFilter
 {
-	private int	mask;
+	private int	mask; 
 
 	/**
 	 * Ctor
