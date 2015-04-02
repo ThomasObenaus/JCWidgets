@@ -26,7 +26,6 @@ import javax.swing.UIManager;
  */
 public class Utilities
 {
-
 	/**
 	 * Uses html-linebreaks ('<br>
 	 * ') to resize the given string so that its width is smaller than the given parameter maxWidth.
@@ -40,6 +39,24 @@ public class Utilities
 	 * @return
 	 */
 	public static String resizeStringToMaxWidthHTML( FontMetrics fontMetrics, String strToResize, int maxWidth )
+	{
+		return resizeStringToMaxWidthHTML( fontMetrics, strToResize, maxWidth, false );
+	}
+
+	/**
+	 * Uses html-linebreaks ('<br>
+	 * ') to resize the given string so that its width is smaller than the given parameter maxWidth.
+	 * Be careful!: the height of the string displayed in a component that is able to interpret
+	 * html-tags will grow with every linebreak added to the string.
+	 * @param fontMetrics - the FontMetrics used by the Component within the resulting string should
+	 *            be placed in. The FontMetrics can be achieved using the function
+	 *            Component.getGraphics().getFontMetric().
+	 * @param strToResize - The string that should be resized.
+	 * @param maxWidth - The width the string should not exceed.
+	 * @param isInsideHTMLTag - if true, the leading and the trailing 'html-tag' won't be generated.
+	 * @return
+	 */
+	public static String resizeStringToMaxWidthHTML( FontMetrics fontMetrics, String strToResize, int maxWidth, boolean isInsideHTMLTag )
 	{
 		if ( strToResize == null )
 			return "";
@@ -76,7 +93,12 @@ public class Utilities
 		}
 
 		int widthCounter = 0;
-		StringBuffer result = new StringBuffer( "<html>" );
+		StringBuffer result = new StringBuffer( );
+		if ( !isInsideHTMLTag )
+		{
+			result.append( "<html>" );
+		}
+
 		for ( int i = 0; i < subWords.size( ); i++ )
 		{
 			widthCounter += fontMetrics.stringWidth( subWords.get( i ) );
@@ -88,7 +110,10 @@ public class Utilities
 			result.append( subWords.get( i ) );
 		}
 
-		result.append( "</html>" );
+		if ( !isInsideHTMLTag )
+		{
+			result.append( "</html>" );
+		}
 
 		return result.toString( );
 	}
