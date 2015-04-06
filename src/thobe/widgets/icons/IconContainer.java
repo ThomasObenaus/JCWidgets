@@ -10,6 +10,7 @@
 
 package thobe.widgets.icons;
 
+import java.awt.MediaTracker;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -62,6 +63,7 @@ public class IconContainer
 		ImageIcon result = null;
 
 		String iconPathStr = resourcePath + this.iconName + "_" + ( enabled ? STR_ENABLED : STR_DISABLED ) + "_" + size + iconExtension;
+		boolean imageLoaded = true;
 		try
 		{
 			URL iconPath = new URL( iconPathStr );
@@ -72,7 +74,14 @@ public class IconContainer
 				if ( result == null )
 				{
 					result = new ImageIcon( iconPath );
-					this.enabledIcons.put( size, result );
+					if ( ( result != null ) && ( result.getImage( ) != null ) && ( result.getImageLoadStatus( ) == MediaTracker.COMPLETE ) )
+					{
+						this.enabledIcons.put( size, result );
+					}
+					else
+					{
+						imageLoaded = false;
+					}
 				}
 			}
 			else
@@ -81,13 +90,26 @@ public class IconContainer
 				if ( result == null )
 				{
 					result = new ImageIcon( iconPath );
-					this.disabledIcons.put( size, result );
+					if ( ( result != null ) && ( result.getImage( ) != null ) && ( result.getImageLoadStatus( ) == MediaTracker.COMPLETE ) )
+					{
+						this.disabledIcons.put( size, result );
+					}
+					else
+					{
+						imageLoaded = false;
+					}
 				}
 			}
 		}
 		catch ( Exception e )
 		{
 			LOG( ).warning( "Unable to load icon '" + iconPathStr + "': " + e.getLocalizedMessage( ) );
+		}
+
+		if ( !imageLoaded )
+		{
+			LOG( ).warning( "Unable to load icon '" + iconPathStr + "' (ImageIcon=" + ( result != null ? "OK" : "NULL" ) + ", image=" + ( result != null ? ( result.getImage( ) != null ? "OK" : "NULL" ) : "N/A" ) + ", imageLoadStatus=" + ( result != null ? result.getImageLoadStatus( ) : "N/A" ) + ")" );
+			result = null;
 		}
 
 		return result;
