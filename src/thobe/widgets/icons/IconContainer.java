@@ -10,7 +10,7 @@
 
 package thobe.widgets.icons;
 
-import java.io.File;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 /**
+ * A container for the different states of an icon (enabled/disabled, different sizes, ...)
  * @author Thomas Obenaus
  * @source IconContainer.java
  * @date Apr 6, 2015
@@ -30,21 +31,23 @@ public class IconContainer
 	private String						iconName;
 	private Map<IconSize, ImageIcon>	enabledIcons;
 	private Map<IconSize, ImageIcon>	disabledIcons;
-	private String						resourcePath;
+	private URL							resourcePath;
 	private String						iconExtension;
 	private Logger						log;
 
-	public IconContainer( Logger log, String resourcePath, String iconName, String iconExtension )
+	/**
+	 * @param log
+	 * @param resourcePath
+	 * @param iconName
+	 * @param iconExtension
+	 */
+	public IconContainer( Logger log, URL resourcePath, String iconName, String iconExtension )
 	{
 		this.log = log;
 		this.resourcePath = resourcePath;
 		this.iconName = iconName;
 		this.iconExtension = iconExtension;
 
-		if ( !this.resourcePath.endsWith( File.separator ) )
-		{
-			this.resourcePath += File.separator;
-		}
 		if ( !this.iconExtension.startsWith( "." ) )
 		{
 			this.iconExtension = "." + this.iconExtension;
@@ -58,15 +61,17 @@ public class IconContainer
 	{
 		ImageIcon result = null;
 
-		String iconPath = resourcePath + this.iconName + "_" + ( enabled ? STR_ENABLED : STR_DISABLED ) + "_" + size + iconExtension;
+		String iconPathStr = resourcePath + this.iconName + "_" + ( enabled ? STR_ENABLED : STR_DISABLED ) + "_" + size + iconExtension;
 		try
 		{
+			URL iconPath = new URL( iconPathStr );
+
 			if ( enabled )
 			{
 				result = this.enabledIcons.get( size );
 				if ( result == null )
 				{
-					result = new ImageIcon( IconContainer.class.getResource( iconPath ) );
+					result = new ImageIcon( iconPath );
 					this.enabledIcons.put( size, result );
 				}
 			}
@@ -75,14 +80,14 @@ public class IconContainer
 				result = this.disabledIcons.get( size );
 				if ( result == null )
 				{
-					result = new ImageIcon( IconContainer.class.getResource( iconPath ) );
+					result = new ImageIcon( iconPath );
 					this.disabledIcons.put( size, result );
 				}
 			}
 		}
 		catch ( Exception e )
 		{
-			LOG( ).warning( "Unable to load icon '" + iconPath + "'." );
+			LOG( ).warning( "Unable to load icon '" + iconPathStr + "': " + e.getLocalizedMessage( ) );
 		}
 
 		return result;
