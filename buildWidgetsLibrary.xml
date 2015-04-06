@@ -9,7 +9,7 @@
 	    <property name="WidgL.eclipse.build.dir"	value="bin"/>
 		<property name="WidgL.eclipse.src.dir"		value="src"/>
 			
-		<property name="WidgL.Program-Version"  value="1.4.5.0"/>
+		<property name="WidgL.Program-Version"  value="1.4.5.1"/>
 	    
 	    <!-- Diese Eigenschaften sollten unverändert bleiben -->
 	    <property name="WidgL.jar.dir"			value="jar"/>
