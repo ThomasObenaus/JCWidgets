@@ -27,7 +27,7 @@ import java.util.Map.Entry;
 import javax.swing.JPanel;
 
 import thobe.widgets.action.AbstrAction;
-import thobe.widgets.icons.IconLib;
+import thobe.widgets.icons_internal.IconLib_Internal;
 import thobe.widgets.multiFramePanel.actions.Action;
 import thobe.widgets.multiFramePanel.actions.ActionGroup;
 import thobe.widgets.multiFramePanel.layouts.Layout_1Single;
@@ -385,8 +385,8 @@ public class MultiFramePanel extends JPanel implements Observer
 			if ( frame.isMaximized( ) )
 			{
 				this.currentlyActiveMaxAction = maxAction;
-				this.currentlyActiveMaxAction.setSelectedIcons( IconLib.get( ).getMinimizeSelE( ), IconLib.get( ).getMinimizeSelE( ) );
-				this.currentlyActiveMaxAction.setIcon( IconLib.get( ).getMinimizeE( ), IconLib.get( ).getMinimizeD( ) );
+				this.currentlyActiveMaxAction.setSelectedIcons( IconLib_Internal.get( ).getMinimizeSelE( ), IconLib_Internal.get( ).getMinimizeSelE( ) );
+				this.currentlyActiveMaxAction.setIcon( IconLib_Internal.get( ).getMinimizeE( ), IconLib_Internal.get( ).getMinimizeD( ) );
 			}
 			this.maximzeActions.add( maxAction );
 			frame.registerGlobalAction( new Action( maxAction ) );
@@ -410,8 +410,8 @@ public class MultiFramePanel extends JPanel implements Observer
 
 		if ( this.oneFrameMaximized ) /* maximize */
 		{
-			this.currentlyActiveMaxAction.setSelectedIcons( IconLib.get( ).getMinimizeSelE( ), IconLib.get( ).getMinimizeSelE( ) );
-			this.currentlyActiveMaxAction.setIcon( IconLib.get( ).getMinimizeE( ), IconLib.get( ).getMinimizeD( ) );
+			this.currentlyActiveMaxAction.setSelectedIcons( IconLib_Internal.get( ).getMinimizeSelE( ), IconLib_Internal.get( ).getMinimizeSelE( ) );
+			this.currentlyActiveMaxAction.setIcon( IconLib_Internal.get( ).getMinimizeE( ), IconLib_Internal.get( ).getMinimizeD( ) );
 			this.currentlyActiveMaxAction.getFrame( ).setMaximized( true );
 
 			this.lastLayout = this.layout;
@@ -424,8 +424,8 @@ public class MultiFramePanel extends JPanel implements Observer
 		else
 		/* minimize */
 		{
-			this.currentlyActiveMaxAction.setSelectedIcons( IconLib.get( ).getMaximizeSelE( ), IconLib.get( ).getMaximizeSelE( ) );
-			this.currentlyActiveMaxAction.setIcon( IconLib.get( ).getMaximizeE( ), IconLib.get( ).getMaximizeD( ) );
+			this.currentlyActiveMaxAction.setSelectedIcons( IconLib_Internal.get( ).getMaximizeSelE( ), IconLib_Internal.get( ).getMaximizeSelE( ) );
+			this.currentlyActiveMaxAction.setIcon( IconLib_Internal.get( ).getMaximizeE( ), IconLib_Internal.get( ).getMaximizeD( ) );
 			this.currentlyActiveMaxAction.getFrame( ).setMaximized( false );
 			this.currentlyActiveMaxAction = null;
 			this.visibleFrames.clear( );
@@ -542,8 +542,8 @@ public class MultiFramePanel extends JPanel implements Observer
 		for ( Act_MaximzeAndRestore actMax : this.maximzeActions )
 		{
 			actMax.setEnabled( ( this.layout.numberOfFramesLayedOut( ) > 1 || this.oneFrameMaximized ) );
-			actMax.setSelectedIcons( IconLib.get( ).getMaximizeSelE( ), IconLib.get( ).getMaximizeSelE( ) );
-			actMax.setIcon( IconLib.get( ).getMaximizeE( ), IconLib.get( ).getMaximizeD( ) );
+			actMax.setSelectedIcons( IconLib_Internal.get( ).getMaximizeSelE( ), IconLib_Internal.get( ).getMaximizeSelE( ) );
+			actMax.setIcon( IconLib_Internal.get( ).getMaximizeE( ), IconLib_Internal.get( ).getMaximizeD( ) );
 		}
 
 		this.doLayout( );
@@ -562,8 +562,8 @@ public class MultiFramePanel extends JPanel implements Observer
 
 		public Act_MaximzeAndRestore( Frame frame )
 		{
-			super( "", "", "maximize", "maximize", IconLib.get( ).getMaximizeE( ), IconLib.get( ).getMaximizeD( ) );
-			this.setSelectedIcons( IconLib.get( ).getMaximizeSelE( ), IconLib.get( ).getMaximizeSelE( ) );
+			super( "", "", "maximize", "maximize", IconLib_Internal.get( ).getMaximizeE( ), IconLib_Internal.get( ).getMaximizeD( ) );
+			this.setSelectedIcons( IconLib_Internal.get( ).getMaximizeSelE( ), IconLib_Internal.get( ).getMaximizeSelE( ) );
 			this.frame = frame;
 		}
 

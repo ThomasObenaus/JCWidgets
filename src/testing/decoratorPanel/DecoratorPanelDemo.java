@@ -36,7 +36,7 @@ import thobe.widgets.decoratorPanel.DecoratorPanel;
 import thobe.widgets.decoratorPanel.DecoratorPanelException;
 import thobe.widgets.decoratorPanel.DisableDecorator;
 import thobe.widgets.decoratorPanel.Screenshot;
-import thobe.widgets.icons.IconLib;
+import thobe.widgets.icons_internal.IconLib_Internal;
 
 /**
  * @author Thomas Obenaus
@@ -127,8 +127,8 @@ public class DecoratorPanelDemo extends JFrame
 		{
 			this.setLayout( new FlowLayout( FlowLayout.RIGHT ) );
 
-			SmallButton bu_enable = new SmallButton( IconLib.get( ).getMinimizeE( ) );
-			bu_enable.setDisabledIcon( IconLib.get( ).getMinimizeE( ) );
+			SmallButton bu_enable = new SmallButton( IconLib_Internal.get( ).getMinimizeE( ) );
+			bu_enable.setDisabledIcon( IconLib_Internal.get( ).getMinimizeE( ) );
 			bu_enable.setToolTipText( "Dis-/ enable the panel" );
 			this.add( bu_enable );
 			bu_enable.addActionListener( new ActionListener( )
@@ -140,7 +140,7 @@ public class DecoratorPanelDemo extends JFrame
 				}
 			} );
 
-			SmallButton bu_close = new SmallButton( IconLib.get( ).getHelpE( ) );
+			SmallButton bu_close = new SmallButton( IconLib_Internal.get( ).getHelpE( ) );
 			bu_close.setToolTipText( "Close" );
 			this.add( bu_close );
 			bu_close.addActionListener( new ActionListener( )

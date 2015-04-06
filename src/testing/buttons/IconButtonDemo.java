@@ -20,7 +20,7 @@ import javax.swing.JTextArea;
 
 import testing.testEnv.TestFrame;
 import thobe.widgets.buttons.IconButton;
-import thobe.widgets.icons.IconLib;
+import thobe.widgets.icons_internal.IconLib_Internal;
 
 /**
  * @author Thomas Obenaus
@@ -44,7 +44,7 @@ public class IconButtonDemo extends TestFrame
 		JPanel pa_top = new JPanel( new FlowLayout( FlowLayout.RIGHT ) );
 		this.add( pa_top, BorderLayout.NORTH );
 
-		final IconButton ib = new IconButton( IconLib.get( ).getHelpE( ), IconLib.get( ).getMinimizeE( ), IconLib.get( ).getMaximizeD( ), IconLib.get( ).getMaximizeSelE( ) );
+		final IconButton ib = new IconButton( IconLib_Internal.get( ).getHelpE( ), IconLib_Internal.get( ).getMinimizeE( ), IconLib_Internal.get( ).getMaximizeD( ), IconLib_Internal.get( ).getMaximizeSelE( ) );
 		pa_top.add( ib );
 		this.add( new JTextArea( ), BorderLayout.CENTER );
 

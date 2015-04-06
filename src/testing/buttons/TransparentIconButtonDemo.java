@@ -24,7 +24,7 @@ import javax.swing.JTextArea;
 
 import thobe.widgets.buttons.IconButton;
 import thobe.widgets.buttons.TransparentIconButton;
-import thobe.widgets.icons.IconLib;
+import thobe.widgets.icons_internal.IconLib_Internal;
 
 /**
  * @author Thomas Obenaus
@@ -48,14 +48,14 @@ public class TransparentIconButtonDemo extends JPanel
 		pa_top.setBackground( Color.red );
 		this.add( pa_top, BorderLayout.NORTH );
 
-		final TransparentIconButton ibc1 = new TransparentIconButton( IconLib.get( ).getMaximizeE( ), IconLib.get( ).getMinimizeE( ) );
+		final TransparentIconButton ibc1 = new TransparentIconButton( IconLib_Internal.get( ).getMaximizeE( ), IconLib_Internal.get( ).getMinimizeE( ) );
 		pa_top.add( ibc1 );
-		final TransparentIconButton ibc2 = new TransparentIconButton( IconLib.get( ).getMaximizeE( ), IconLib.get( ).getMinimizeE( ), IconLib.get( ).getMaximizeD( ), IconLib.get( ).getMaximizeSelE( ) );
+		final TransparentIconButton ibc2 = new TransparentIconButton( IconLib_Internal.get( ).getMaximizeE( ), IconLib_Internal.get( ).getMinimizeE( ), IconLib_Internal.get( ).getMaximizeD( ), IconLib_Internal.get( ).getMaximizeSelE( ) );
 		pa_top.add( ibc2 );
 
-		final IconButton ib1 = new IconButton( IconLib.get( ).getMaximizeE( ), IconLib.get( ).getMinimizeE( ), IconLib.get( ).getMaximizeD( ), IconLib.get( ).getMaximizeSelE( ) );
+		final IconButton ib1 = new IconButton( IconLib_Internal.get( ).getMaximizeE( ), IconLib_Internal.get( ).getMinimizeE( ), IconLib_Internal.get( ).getMaximizeD( ), IconLib_Internal.get( ).getMaximizeSelE( ) );
 		pa_top.add( ib1 );
-		final IconButton ib2 = new IconButton( IconLib.get( ).getMaximizeE( ), IconLib.get( ).getMinimizeE( ) );
+		final IconButton ib2 = new IconButton( IconLib_Internal.get( ).getMaximizeE( ), IconLib_Internal.get( ).getMinimizeE( ) );
 		pa_top.add( ib2 );
 
 		ibc1.addActionListener( new ActionListener( )

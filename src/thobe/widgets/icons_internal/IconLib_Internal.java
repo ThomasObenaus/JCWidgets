@@ -7,7 +7,7 @@
  *	EMail:		obenaus.thomas@gmail.com
  *  Project:    JavaComponents/Widgets
  */
-package thobe.widgets.icons;
+package thobe.widgets.icons_internal;
 
 import javax.swing.ImageIcon;
 
@@ -16,9 +16,9 @@ import javax.swing.ImageIcon;
  * @source IconLib.java
  * @date 14.04.2010
  */
-public class IconLib
+public class IconLib_Internal
 {
-	private static IconLib		instance	= null;
+	private static IconLib_Internal		instance	= null;
 
 	private static ImageIcon	helpE;
 	private static ImageIcon	helpD;
@@ -77,76 +77,76 @@ public class IconLib
 	private static ImageIcon	expanded_E;
 	private static ImageIcon	expanded_P;
 
-	private IconLib( )
+	private IconLib_Internal( )
 	{
 		createIcons( );
 	}
 
-	public static IconLib get( )
+	public static IconLib_Internal get( )
 	{
 		if ( instance == null )
-			instance = new IconLib( );
+			instance = new IconLib_Internal( );
 		return instance;
 	}
 
 	private void createIcons( )
 	{
-		helpE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/helpE.png" ) );
-		helpD = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/helpD.png" ) );
-		maximizeE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/maximizeE.png" ) );
-		maximizeD = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/maximizeD.png" ) );
-		maximizeSelE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/maximizeSelE.png" ) );
+		helpE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/helpE.png" ) );
+		helpD = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/helpD.png" ) );
+		maximizeE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/maximizeE.png" ) );
+		maximizeD = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/maximizeD.png" ) );
+		maximizeSelE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/maximizeSelE.png" ) );
 
-		minimizeE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/minimizeE.png" ) );
-		minimizeD = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/minimizeD.png" ) );
-		minimizeSelE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/minimizeSelE.png" ) );
+		minimizeE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/minimizeE.png" ) );
+		minimizeD = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/minimizeD.png" ) );
+		minimizeSelE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/minimizeSelE.png" ) );
 
-		errorIcon = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/err_cross.png" ) );
-		errorIconMid = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/err_mid.png" ) );
-		warnIcon = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/warn.png" ) );
-		infoIcon = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/info.png" ) );
+		errorIcon = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/err_cross.png" ) );
+		errorIconMid = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/err_mid.png" ) );
+		warnIcon = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/warn.png" ) );
+		infoIcon = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/info.png" ) );
 
-		spliPanel_maxD = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_maxD.png" ) );
-		spliPanel_maxE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_maxE.png" ) );
-		spliPanel_maxEO = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_maxEO.png" ) );
-		spliPanel_maxEP = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_maxEP.png" ) );
+		spliPanel_maxD = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_maxD.png" ) );
+		spliPanel_maxE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_maxE.png" ) );
+		spliPanel_maxEO = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_maxEO.png" ) );
+		spliPanel_maxEP = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_maxEP.png" ) );
 
-		spliPanel_minD = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_minD.png" ) );
-		spliPanel_minE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_minE.png" ) );
-		spliPanel_minEO = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_minEO.png" ) );
-		spliPanel_minEP = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_minEP.png" ) );
+		spliPanel_minD = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_minD.png" ) );
+		spliPanel_minE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_minE.png" ) );
+		spliPanel_minEO = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_minEO.png" ) );
+		spliPanel_minEP = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_minEP.png" ) );
 
-		spliPanel_closeD = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_closeD.png" ) );
-		spliPanel_closeE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_closeE.png" ) );
-		spliPanel_closeEO = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_closeEO.png" ) );
-		spliPanel_closeEP = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_closeEP.png" ) );
+		spliPanel_closeD = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_closeD.png" ) );
+		spliPanel_closeE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_closeE.png" ) );
+		spliPanel_closeEO = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_closeEO.png" ) );
+		spliPanel_closeEP = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_closeEP.png" ) );
 
-		spliPanel_vSplitD = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_vSplitD.png" ) );
-		spliPanel_vSplitE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_vSplitE.png" ) );
-		spliPanel_vSplitEO = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_vSplitEO.png" ) );
-		spliPanel_vSplitEP = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_vSplitEP.png" ) );
+		spliPanel_vSplitD = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_vSplitD.png" ) );
+		spliPanel_vSplitE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_vSplitE.png" ) );
+		spliPanel_vSplitEO = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_vSplitEO.png" ) );
+		spliPanel_vSplitEP = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_vSplitEP.png" ) );
 
-		spliPanel_hSplitD = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_hSplitD.png" ) );
-		spliPanel_hSplitE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_hSplitE.png" ) );
-		spliPanel_hSplitEO = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_hSplitEO.png" ) );
-		spliPanel_hSplitEP = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_hSplitEP.png" ) );
+		spliPanel_hSplitD = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_hSplitD.png" ) );
+		spliPanel_hSplitE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_hSplitE.png" ) );
+		spliPanel_hSplitEO = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_hSplitEO.png" ) );
+		spliPanel_hSplitEP = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_hSplitEP.png" ) );
 
-		spliPanel_lockD = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_lockD.png" ) );
-		spliPanel_lockE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_lockE.png" ) );
-		spliPanel_lockEO = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_lockEO.png" ) );
-		spliPanel_lockEP = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_lockEP.png" ) );
+		spliPanel_lockD = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_lockD.png" ) );
+		spliPanel_lockE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_lockE.png" ) );
+		spliPanel_lockEO = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_lockEO.png" ) );
+		spliPanel_lockEP = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_lockEP.png" ) );
 
-		spliPanel_unLockD = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_unlockD.png" ) );
-		spliPanel_unLockE = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_unlockE.png" ) );
-		spliPanel_unLockEO = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_unlockEO.png" ) );
-		spliPanel_unLockEP = new ImageIcon( IconLib.class.getResource( "/thobe/widgets/icons/spa_unlockEP.png" ) );
+		spliPanel_unLockD = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_unlockD.png" ) );
+		spliPanel_unLockE = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_unlockE.png" ) );
+		spliPanel_unLockEO = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_unlockEO.png" ) );
+		spliPanel_unLockEP = new ImageIcon( IconLib_Internal.class.getResource( "/thobe/widgets/icons_internal/spa_unlockEP.png" ) );
 
-		collapsed_P = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons/collapsed_P.png" ) );
-		collapsed_E = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons/collapsed_E.png" ) );
-		collapsed_EO = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons/collapsed_EO.png" ) );
-		expanded_P = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons/expanded_P.png" ) );
-		expanded_E = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons/expanded_E.png" ) );
-		expanded_EO = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons/expanded_EO.png" ) );
+		collapsed_P = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons_internal/collapsed_P.png" ) );
+		collapsed_E = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons_internal/collapsed_E.png" ) );
+		collapsed_EO = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons_internal/collapsed_EO.png" ) );
+		expanded_P = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons_internal/expanded_P.png" ) );
+		expanded_E = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons_internal/expanded_E.png" ) );
+		expanded_EO = new ImageIcon( getClass( ).getResource( "/thobe/widgets/icons_internal/expanded_EO.png" ) );
 	}
 
 	public ImageIcon getSpliPanel_unLockD( )

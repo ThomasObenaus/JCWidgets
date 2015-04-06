@@ -26,7 +26,7 @@ import thobe.widgets.action.AbstrAction;
 import thobe.widgets.buttons.SmallButton;
 import thobe.widgets.floatingPanel.ExpandableFloatingPanel;
 import thobe.widgets.floatingPanel.FloatingPanelContainer;
-import thobe.widgets.icons.IconLib;
+import thobe.widgets.icons_internal.IconLib_Internal;
 
 /**
  * @author Thomas Obenaus
@@ -51,7 +51,7 @@ public class TestExpandableFloatingPanel extends ExpandableFloatingPanel
 
 	private void buildGUI( )
 	{
-		this.setIconSet( IconLib.get( ).getCollapsed_E( ), IconLib.get( ).getCollapsed_EO( ), IconLib.get( ).getCollapsed_P( ), IconLib.get( ).getExpanded_E( ), IconLib.get( ).getExpanded_EO( ), IconLib.get( ).getExpanded_P( ) );
+		this.setIconSet( IconLib_Internal.get( ).getCollapsed_E( ), IconLib_Internal.get( ).getCollapsed_EO( ), IconLib_Internal.get( ).getCollapsed_P( ), IconLib_Internal.get( ).getExpanded_E( ), IconLib_Internal.get( ).getExpanded_EO( ), IconLib_Internal.get( ).getExpanded_P( ) );
 
 		this.setLayout( new BorderLayout( ) );
 		this.add( new JLabel( "lskdjflksdjf" ), BorderLayout.WEST );

@@ -39,7 +39,7 @@ import javax.swing.plaf.basic.ComboPopup;
 
 import sun.swing.DefaultLookup;
 import thobe.widgets.buttons.IconButton;
-import thobe.widgets.icons.IconLib;
+import thobe.widgets.icons_internal.IconLib_Internal;
 
 /**
  * @author Thomas Obenaus
@@ -156,7 +156,7 @@ class ComboBoxButtonUI extends BasicComboBoxUI implements LayoutManager
 
 	protected JButton createArrowButton( )
 	{
-		IconButton button = new IconButton( IconLib.get( ).getHelpD( ), IconLib.get( ).getHelpD( ) );
+		IconButton button = new IconButton( IconLib_Internal.get( ).getHelpD( ), IconLib_Internal.get( ).getHelpD( ) );
 		return button;
 	}
 
@@ -395,7 +395,7 @@ class bb extends JLabel
 {
 	public bb( )
 	{
-		this.setIcon( IconLib.get( ).getHelpE( ) );
+		this.setIcon( IconLib_Internal.get( ).getHelpE( ) );
 	}
 }
 

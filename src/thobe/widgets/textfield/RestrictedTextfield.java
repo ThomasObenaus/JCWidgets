@@ -30,7 +30,7 @@ import java.util.Locale;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
-import thobe.widgets.icons.IconLib;
+import thobe.widgets.icons_internal.IconLib_Internal;
 
 /**
  * Abstract class representing a TextField whose specific implementation can be used to restrict the
@@ -135,9 +135,9 @@ public abstract class RestrictedTextfield<T> extends JTextField
 		this.lastCommitedValue = null;
 		this.messageBuilder = null;
 		this.contentValid = true;
-		this.errImage = IconLib.get( ).getErrorIcon( );
-		this.warnImage = IconLib.get( ).getWarnIcon( );
-		this.infoImage = IconLib.get( ).getInfoIcon( );
+		this.errImage = IconLib_Internal.get( ).getErrorIcon( );
+		this.warnImage = IconLib_Internal.get( ).getWarnIcon( );
+		this.infoImage = IconLib_Internal.get( ).getInfoIcon( );
 		int m = iconSize / 2;
 		this.setMargin( new Insets( m, m, m, m ) );
 		this.automaticCorrectionOnFocusLost = automaticCorrectionOnFocusLost;

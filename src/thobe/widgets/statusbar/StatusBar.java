@@ -24,7 +24,7 @@ import javax.swing.JPanel;
 import sun.swing.DefaultLookup;
 import thobe.widgets.action.AbstrAction;
 import thobe.widgets.buttons.SmallButton;
-import thobe.widgets.icons.IconLib;
+import thobe.widgets.icons_internal.IconLib_Internal;
 
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
@@ -180,7 +180,7 @@ public class StatusBar extends JPanel
 
 		public Act_Help( )
 		{
-			super( "Hilfe", "Hilfe", "Hilfe", "Hilfe", IconLib.get( ).getHelpE( ), IconLib.get( ).getHelpD( ) );
+			super( "Hilfe", "Hilfe", "Hilfe", "Hilfe", IconLib_Internal.get( ).getHelpE( ), IconLib_Internal.get( ).getHelpD( ) );
 		}
 
 		public void actionPerformed( ActionEvent e )

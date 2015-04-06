@@ -18,7 +18,7 @@ import javax.swing.JTextArea;
 import testing.testEnv.TestFrame;
 import thobe.widgets.comboBoxButton.ComboBoxButtonEntry;
 import thobe.widgets.comboBoxButton.ComboboxButton;
-import thobe.widgets.icons.IconLib;
+import thobe.widgets.icons_internal.IconLib_Internal;
 
 /**
  * @author Thomas Obenaus
@@ -40,9 +40,9 @@ public class ComboBoxButtonDemo extends TestFrame
 		JTextArea ta = new JTextArea( );
 		this.add( ta );
 
-		ComboBoxButtonEntry entryHelp = new ComboBoxButtonEntry( "Help", IconLib.get( ).getHelpE( ) );
-		ComboBoxButtonEntry entryMax = new ComboBoxButtonEntry( "Maximize", IconLib.get( ).getMaximizeE( ) );
-		ComboBoxButtonEntry entryMin = new ComboBoxButtonEntry( "Minimize", IconLib.get( ).getMinimizeE( ) );
+		ComboBoxButtonEntry entryHelp = new ComboBoxButtonEntry( "Help", IconLib_Internal.get( ).getHelpE( ) );
+		ComboBoxButtonEntry entryMax = new ComboBoxButtonEntry( "Maximize", IconLib_Internal.get( ).getMaximizeE( ) );
+		ComboBoxButtonEntry entryMin = new ComboBoxButtonEntry( "Minimize", IconLib_Internal.get( ).getMinimizeE( ) );
 
 		ComboboxButton cs = new ComboboxButton( new ComboBoxButtonEntry[]
 		{ entryHelp, entryMax, entryMin } );

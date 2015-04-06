@@ -46,7 +46,7 @@ import thobe.widgets.decoratorPanel.DecoratorPanelException;
 import thobe.widgets.decoratorPanel.ProgressPanel;
 import thobe.widgets.decoratorPanel.Screenshot;
 import thobe.widgets.decoratorPanel.WaitingDecorator;
-import thobe.widgets.icons.IconLib;
+import thobe.widgets.icons_internal.IconLib_Internal;
 
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
@@ -479,7 +479,7 @@ public class SPComponentDecorator extends ProgressPanel implements KeyListener, 
 			this.setLayout( new FlowLayout( FlowLayout.RIGHT, 2, 2 ) );
 
 			/* lock-button */
-			this.bu_lock = new TransparentIconButton( IconLib.get( ).getSpliPanel_lockE( ), IconLib.get( ).getSpliPanel_lockEP( ), IconLib.get( ).getSpliPanel_lockD( ), IconLib.get( ).getSpliPanel_lockEO( ) );
+			this.bu_lock = new TransparentIconButton( IconLib_Internal.get( ).getSpliPanel_lockE( ), IconLib_Internal.get( ).getSpliPanel_lockEP( ), IconLib_Internal.get( ).getSpliPanel_lockD( ), IconLib_Internal.get( ).getSpliPanel_lockEO( ) );
 			this.add( this.bu_lock );
 			this.bu_lock.addActionListener( new ActionListener( )
 			{
@@ -493,7 +493,7 @@ public class SPComponentDecorator extends ProgressPanel implements KeyListener, 
 			this.bu_lock.setOpaque( false );
 
 			/* vSplit button */
-			this.bu_vSplit = new TransparentIconButton( IconLib.get( ).getSpliPanel_vSplitE( ), IconLib.get( ).getSpliPanel_vSplitEP( ), IconLib.get( ).getSpliPanel_vSplitD( ), IconLib.get( ).getSpliPanel_vSplitEO( ) );
+			this.bu_vSplit = new TransparentIconButton( IconLib_Internal.get( ).getSpliPanel_vSplitE( ), IconLib_Internal.get( ).getSpliPanel_vSplitEP( ), IconLib_Internal.get( ).getSpliPanel_vSplitD( ), IconLib_Internal.get( ).getSpliPanel_vSplitEO( ) );
 			this.add( this.bu_vSplit );
 			this.bu_vSplit.addActionListener( new ActionListener( )
 			{
@@ -505,7 +505,7 @@ public class SPComponentDecorator extends ProgressPanel implements KeyListener, 
 			} );
 
 			/* hSplit button */
-			this.bu_hSplit = new TransparentIconButton( IconLib.get( ).getSpliPanel_hSplitE( ), IconLib.get( ).getSpliPanel_hSplitEP( ), IconLib.get( ).getSpliPanel_hSplitD( ), IconLib.get( ).getSpliPanel_hSplitEO( ) );
+			this.bu_hSplit = new TransparentIconButton( IconLib_Internal.get( ).getSpliPanel_hSplitE( ), IconLib_Internal.get( ).getSpliPanel_hSplitEP( ), IconLib_Internal.get( ).getSpliPanel_hSplitD( ), IconLib_Internal.get( ).getSpliPanel_hSplitEO( ) );
 			this.add( this.bu_hSplit );
 			this.bu_hSplit.addActionListener( new ActionListener( )
 			{
@@ -517,7 +517,7 @@ public class SPComponentDecorator extends ProgressPanel implements KeyListener, 
 			} );
 
 			/* max button */
-			this.bu_max = new TransparentIconButton( IconLib.get( ).getSpliPanel_maxE( ), IconLib.get( ).getSpliPanel_maxEP( ), IconLib.get( ).getSpliPanel_maxD( ), IconLib.get( ).getSpliPanel_maxEO( ) );
+			this.bu_max = new TransparentIconButton( IconLib_Internal.get( ).getSpliPanel_maxE( ), IconLib_Internal.get( ).getSpliPanel_maxEP( ), IconLib_Internal.get( ).getSpliPanel_maxD( ), IconLib_Internal.get( ).getSpliPanel_maxEO( ) );
 			this.add( this.bu_max );
 			this.bu_max.addActionListener( new ActionListener( )
 			{
@@ -529,7 +529,7 @@ public class SPComponentDecorator extends ProgressPanel implements KeyListener, 
 			} );
 
 			/* close button */
-			this.bu_close = new TransparentIconButton( IconLib.get( ).getSpliPanel_closeE( ), IconLib.get( ).getSpliPanel_closeEP( ), IconLib.get( ).getSpliPanel_closeD( ), IconLib.get( ).getSpliPanel_closeEO( ) );
+			this.bu_close = new TransparentIconButton( IconLib_Internal.get( ).getSpliPanel_closeE( ), IconLib_Internal.get( ).getSpliPanel_closeEP( ), IconLib_Internal.get( ).getSpliPanel_closeD( ), IconLib_Internal.get( ).getSpliPanel_closeEO( ) );
 			this.add( this.bu_close );
 			this.bu_close.addActionListener( new ActionListener( )
 			{
@@ -560,18 +560,18 @@ public class SPComponentDecorator extends ProgressPanel implements KeyListener, 
 			if ( isLocked( ) )
 			{
 				bu_lock.setToolTipText( tt_buUnLock );
-				this.bu_lock.setIconEnabled( IconLib.get( ).getSpliPanel_unLockE( ) );
-				this.bu_lock.setIconDisabled( IconLib.get( ).getSpliPanel_unLockD( ) );
-				this.bu_lock.setIconMouseOver( IconLib.get( ).getSpliPanel_unLockEO( ) );
-				this.bu_lock.setIconPressed( IconLib.get( ).getSpliPanel_unLockEP( ) );
+				this.bu_lock.setIconEnabled( IconLib_Internal.get( ).getSpliPanel_unLockE( ) );
+				this.bu_lock.setIconDisabled( IconLib_Internal.get( ).getSpliPanel_unLockD( ) );
+				this.bu_lock.setIconMouseOver( IconLib_Internal.get( ).getSpliPanel_unLockEO( ) );
+				this.bu_lock.setIconPressed( IconLib_Internal.get( ).getSpliPanel_unLockEP( ) );
 			}
 			else
 			{
 				bu_lock.setToolTipText( tt_buLock );
-				this.bu_lock.setIconEnabled( IconLib.get( ).getSpliPanel_lockE( ) );
-				this.bu_lock.setIconDisabled( IconLib.get( ).getSpliPanel_lockD( ) );
-				this.bu_lock.setIconMouseOver( IconLib.get( ).getSpliPanel_lockEO( ) );
-				this.bu_lock.setIconPressed( IconLib.get( ).getSpliPanel_lockEP( ) );
+				this.bu_lock.setIconEnabled( IconLib_Internal.get( ).getSpliPanel_lockE( ) );
+				this.bu_lock.setIconDisabled( IconLib_Internal.get( ).getSpliPanel_lockD( ) );
+				this.bu_lock.setIconMouseOver( IconLib_Internal.get( ).getSpliPanel_lockEO( ) );
+				this.bu_lock.setIconPressed( IconLib_Internal.get( ).getSpliPanel_lockEP( ) );
 			}
 
 		}
@@ -587,18 +587,18 @@ public class SPComponentDecorator extends ProgressPanel implements KeyListener, 
 			if ( !maximized )
 			{
 				bu_max.setToolTipText( tt_buMax );
-				this.bu_max.setIconEnabled( IconLib.get( ).getSpliPanel_maxE( ) );
-				this.bu_max.setIconDisabled( IconLib.get( ).getSpliPanel_maxD( ) );
-				this.bu_max.setIconMouseOver( IconLib.get( ).getSpliPanel_maxEO( ) );
-				this.bu_max.setIconPressed( IconLib.get( ).getSpliPanel_maxEP( ) );
+				this.bu_max.setIconEnabled( IconLib_Internal.get( ).getSpliPanel_maxE( ) );
+				this.bu_max.setIconDisabled( IconLib_Internal.get( ).getSpliPanel_maxD( ) );
+				this.bu_max.setIconMouseOver( IconLib_Internal.get( ).getSpliPanel_maxEO( ) );
+				this.bu_max.setIconPressed( IconLib_Internal.get( ).getSpliPanel_maxEP( ) );
 			}
 			else
 			{
 				bu_max.setToolTipText( tt_buMin );
-				this.bu_max.setIconEnabled( IconLib.get( ).getSpliPanel_minE( ) );
-				this.bu_max.setIconDisabled( IconLib.get( ).getSpliPanel_minD( ) );
-				this.bu_max.setIconMouseOver( IconLib.get( ).getSpliPanel_minEO( ) );
-				this.bu_max.setIconPressed( IconLib.get( ).getSpliPanel_minEP( ) );
+				this.bu_max.setIconEnabled( IconLib_Internal.get( ).getSpliPanel_minE( ) );
+				this.bu_max.setIconDisabled( IconLib_Internal.get( ).getSpliPanel_minD( ) );
+				this.bu_max.setIconMouseOver( IconLib_Internal.get( ).getSpliPanel_minEO( ) );
+				this.bu_max.setIconPressed( IconLib_Internal.get( ).getSpliPanel_minEP( ) );
 			}
 
 			/* enable/ disable buttons */
