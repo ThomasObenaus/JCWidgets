@@ -53,9 +53,11 @@ public abstract class IconLib
 	 *               protected Map<IIconType, IconContainer> getIconContainers( )<br>
 	 *               {<br>
 	 *               Map<IIconType, IconContainer> icons = new HashMap<>( );<br>
-	 *               icons.put( LFV_IconType.EXPAND, new IconContainer( LOG( ), "/thobe/logfileviewer/gui/icons/",
+	 *               icons.put( LFV_IconType.EXPAND, new IconContainer( LOG( ),
+	 *               YourClass.class.getResource("/thobe/logfileviewer/gui/icons/"),
 	 *               "expand", "png" ) );<br>
-	 *               icons.put( LFV_IconType.COLLAPSE, new IconContainer( LOG( ), "/thobe/logfileviewer/gui/icons/",
+	 *               icons.put( LFV_IconType.COLLAPSE, new IconContainer( LOG( ),
+	 *               YourClass.class.getResource("/thobe/logfileviewer/gui/icons/"),
 	 *               "collapse", "png" )
 	 *               );<br>
 	 *               return icons;<br>
